@@ -22,7 +22,7 @@ pip install numpy matplotlib deap
 Then, simply run the script with python:
 
 ```
-python school_schedule.py
+python main.py
 ```
 
 ## Output
