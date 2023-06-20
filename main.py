@@ -206,7 +206,6 @@ def create_schedule_image(schedule, algorithm_name):
         teacher_id, day, time, course_id, classroom_id = gene
         teacher_name = [t.name for t in TEACHERS if t.id == teacher_id][0]
         course_name = [c.name for c in COURSES if c.id == course_id][0]
-        classroom_name = [cl.name for cl in CLASSROOMS if cl.id == classroom_id][0]
         classroom_schedules[classroom_id][time][day] = f'{course_name}\n{teacher_name}\n'
 
     # Define time slots and day labels
