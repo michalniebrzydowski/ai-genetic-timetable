@@ -98,20 +98,6 @@ def create_individual():
             individual.append([teacher_id, day, time, course.id, classroom_id])
             assigned_courses.append(course.id)
 
-    # Assign remaining courses to random time slots
-    remaining_courses = [course for course in COURSES if course.id not in assigned_courses]
-    if len(remaining_courses) > 0:
-        remaining_slots = (DAYS_OF_WEEK * TIME_SLOTS) - len(individual)
-        for _ in range(remaining_slots):
-            course = random.choice(remaining_courses)
-            teacher_id = random.choice([teacher.id for teacher in TEACHERS if course.id in teacher.courses])
-            day = random.randint(0, DAYS_OF_WEEK - 1)
-            time = random.randint(0, TIME_SLOTS - 1)
-            classroom_id = random.randint(0, len(CLASSROOMS) - 1)
-            individual.append([teacher_id, day, time, course.id, classroom_id])
-            assigned_courses.append(course.id)
-            remaining_courses.remove(course)  # Remove the course from the list
-
     return individual
 
 
